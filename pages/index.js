@@ -1,4 +1,5 @@
 import Head from 'next/head'
+import { GoalForm } from '../Components'
 import clientPromise from '../lib/mongodb'
 
 export default function Home({ isConnected }) {
@@ -26,7 +27,9 @@ export default function Home({ isConnected }) {
           </h2>
         )}
 </main>
-      
+      <div>
+        <GoalForm/>
+      </div>
     </div>
   )
 }

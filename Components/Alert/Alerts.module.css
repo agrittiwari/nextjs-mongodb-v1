@@ -1,0 +1,20 @@
+.successDiv{
+    background-color: rgb(21, 177, 21);
+color:white;
+font-size: 14px;
+padding:10px;
+
+margin-bottom: 10px;
+border-radius: .25rem;
+
+}
+
+.errorDiv{
+    background-color: rgb(223, 65, 60);
+color:white;
+font-size: 14px;
+padding:10px;
+margin-bottom: 10px;
+border-radius: .25rem;
+
+}
