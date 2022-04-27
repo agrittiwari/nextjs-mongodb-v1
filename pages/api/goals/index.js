@@ -12,12 +12,32 @@ export default async function handler(req, res){
     }
 }
 
+
+async function getGoals(req, res){
+    try {
+        //connect to database
+ const client = await clientPromise;
+ const db = client.db()
+ const response= await db.collection('goals').find()
+const responseData = await response.next()
+ console.log(responseData)
+        return res.json({responseData})
+    } catch (error) {
+         // return an error
+         return res.json({
+            message: new Error(error).message,
+            success: false,
+        })
+    }
+}
+
+
 async function addGoal (req, res){
    
 
     try {
         let goal = JSON.parse(req.body);
-        console.log(`this is coming req.body ${goal}`)
+        //console.log(goal)
     
         let{ name, age, description} =goal
     
@@ -28,14 +48,16 @@ async function addGoal (req, res){
  const client = await clientPromise;
  const db = client.db()
 
-//POST request
-const response = await db.collection('goals').insertOne({goal})
- console.log(response.acknowledged)
+
+
+//PUT request
+const response = await db.collection('goals').updateOne({"_id":"101"},{$push:{goalsArray:req.body}},{$upsert:true})
+ console.log(response)
 
 //return a message
 return res.json({
     message: 'Details updated successfully',
-    success: response?.acknowledged
+    success: true
 })
     } catch (error) {
         // return an error

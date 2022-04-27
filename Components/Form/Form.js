@@ -1,9 +1,6 @@
 import { useState } from "react"
 import { SuccessAlert, ErrorAlert} from "../Alert";
 
-
-
-
  export const GoalForm = () =>
 { const [error, setError] = useState('');
 const [message, setMessage] = useState('');
@@ -30,7 +27,7 @@ const postGoal = async (e) =>
 }
     console.log(JSON.stringify(goal))
     console.log(goal)
-    //console.log(JSON.parse(details))
+   
     try {
         const response = await fetch('/api/goals', {
             method: 'POST',
@@ -40,7 +37,7 @@ const postGoal = async (e) =>
             //get the data
     
             let data = await response.json()
-    console.log( `this is from goal component ${data.message}`)
+    console.log( `this is from Form component ${data.message}`)
             if (data.success) {
                  // reset the fields
                  setName('');
