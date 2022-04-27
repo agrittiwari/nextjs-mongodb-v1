@@ -59,7 +59,7 @@ const postGoal = async (e) =>
    
 }
     return (
-        <div className="m-100 p-10 mt-20 px-70 border-1  bg-blue-200  flex flex-col shadow-2xl rounded-lg w-11/12 inset-5">
+        <div className="m-60 p-10 mt-20 px-70 border-1  bg-blue-200  flex flex-col shadow-2xl rounded-lg w-11/12 inset-5">
 
 
             
@@ -67,19 +67,20 @@ const postGoal = async (e) =>
                
                 {message ? <SuccessAlert msg={message}/>: null}
                 
-        <strong className="underline">Imagination is a powerful tool</strong>
+        <strong className="underline ">Imagination is a powerful tool</strong>
         
 
-        <form onSubmit={postGoal} className="form my-3 flex flex-col">
+        <form onSubmit={postGoal} className="form my-2 flex flex-col">
            
-        <label className="p-2 decoration-solid	">Your Life Goal</label>
-        <input className="form-input border border-gray-400 p-2 rounded-lg appearance-none focus:border-gray-500 focus:outline-none mb-4" name="description" value={description} onChange={(e)=>setDescription(e.target.value)} type="text" placeholder="Your Goal" />
-        <div className="flex flex-row">
-        <label className="p-2 decoration-solid	" >Name</label>
-        <input className="form-input border border-gray-400 p-6 rounded-lg appearance-none focus:border-gray-500 focus:outline-none" name="name" value={name} onChange={(e)=>setName(e.target.value)}   type="text" placeholder="Your name" />         
-        <label className="p-2 decoration-solid	">Twitter Username <i className="fa fa-twitter" aria-hidden="true"></i></label>
-         <input type="text" className="form-input border border-gray-400 p-2 rounded-lg appearance-none focus:border-gray-500 focus:outline-none" name="age" value={age} onChange={(e) =>setAge(e.target.value)}  placeholder="Your Age" />
-       </div>
+        <label className="p-2 decoration-solid	">Your Life/Current Goal</label>
+        <input className="form-input border border-gray-400 p-2 rounded-lg appearance-none focus:border-gray-500 focus:outline-none mb-2" name="description" value={description} onChange={(e)=>setDescription(e.target.value)} type="text" placeholder="Your Goal" />
+        
+                    <label className="p-2 decoration-solid	" >Name</label>
+                    <input className="form-input border border-gray-400 p-2  rounded-lg appearance-none focus:border-gray-500 mb-2 focus:outline-none" name="name" value={name} onChange={(e)=>setName(e.target.value)}   type="text" placeholder="Your name" />         
+                
+                    <label className="p-2 decoration-solid">Your Age <i className="fa fa-twitter" aria-hidden="true"></i></label>
+                    <input type="number" className="form-input border border-gray-400 p-2 mb-4 rounded-lg appearance-none mb-2 focus:border-gray-500 focus:outline-none" name="age" value={age} onChange={(e) =>setAge(e.target.value)}  placeholder="Your Age (years old)" />
+                
         
 
             <button type="submit" className="rounded-full bg-blue-600  p-1 border border-gray-600">Submit</button>
@@ -91,11 +92,3 @@ const postGoal = async (e) =>
      
 } 
  
-export const RenderGoal = () =>
-{
-    return (
-        <div><li>about</li>
-            <li>bioLink</li><li>
-            TwitterHandle</li></div>
-    )
-}

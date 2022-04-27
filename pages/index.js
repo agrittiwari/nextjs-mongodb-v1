@@ -4,7 +4,7 @@ import clientPromise from '../lib/mongodb'
 
 export default function Home({ isConnected }) {
   return (
-    <div className="container">
+    <div className="container ">
       <Head>
         <title>Write your Life Goal</title>
         <link rel="icon" href="/favicon.ico" />
@@ -20,9 +20,9 @@ export default function Home({ isConnected }) {
         </h1>
 
         {isConnected ? (
-          <h2 className="subtitle box-content  p-5 ">See the List of all wonderful Goals people are working on</h2>
+          <h2 className="subtitle pt-2 ">See the List of all wonderful Goals people are working on</h2>
         ) : (
-          <h2 className="subtitle box-content  p-2">
+          <h2 className="subtitle box-content  ">
           There is no access to Dreamland
           </h2>
         )}

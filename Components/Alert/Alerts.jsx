@@ -1,6 +1,4 @@
 import AlertStyle from './Alerts.module.css'
-
-
 export const SuccessAlert = ({msg }) =>
 {
     return (
@@ -9,9 +7,6 @@ export const SuccessAlert = ({msg }) =>
         </div>
     )
 }
-
-
- 
 export const ErrorAlert = ({error }) =>
 {
     return (
