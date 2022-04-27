@@ -1,5 +1,5 @@
 import { useState } from "react"
-import { SuccessAlert, ErrorAlert} from "./Alert";
+import { SuccessAlert, ErrorAlert} from "../Alert";
 
 
 
@@ -32,7 +32,7 @@ const postGoal = async (e) =>
     console.log(goal)
     //console.log(JSON.parse(details))
     try {
-        const response = await fetch('/api/addGoal', {
+        const response = await fetch('/api/goals', {
             method: 'POST',
             body: JSON.stringify(goal)
         })
@@ -43,9 +43,9 @@ const postGoal = async (e) =>
     console.log( `this is from goal component ${data.message}`)
             if (data.success) {
                  // reset the fields
-                 setAbout('');
-                setTwitterHandle('');
-                setBioLink('')
+                 setName('');
+                setAge('');
+                setDescription('')
                  // set the message
                 return setMessage(data.message)
             } else {
@@ -54,7 +54,7 @@ const postGoal = async (e) =>
     
     
     } catch (err) {
-        console.error('error happened here', error)
+        console.error('error happened here', err)
     }
    
 }
@@ -86,7 +86,7 @@ const postGoal = async (e) =>
             <button type="submit" className="rounded-full bg-blue-600  p-1 border border-gray-600">Submit</button>
 
     </form>
-    <h1>{name+ age+ description}</h1>
+    
       </div>
 )
      
