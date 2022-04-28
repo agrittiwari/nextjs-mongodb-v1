@@ -11,7 +11,7 @@ useEffect(()=>{
     fetch('api/goals')
       .then((res) => res.json())
       .then((data) => {
-        setData(data?.response.goalsArray)
+        setData(data.response.goalsArray)
         setLoading(false)
       })
 },[])
@@ -21,8 +21,9 @@ if (isLoading) return <p>Loading...</p>
 
     return (
     <div><h1>GoalsList</h1>
-{console.log(data)}
-<GoalCard/>
+{console.log(typeof(data))}
+{data.map((index, goal)=>(<GoalCard key={index} props={goal}/>))}
+
         
     </div>
   )

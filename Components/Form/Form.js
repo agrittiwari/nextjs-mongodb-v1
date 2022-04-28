@@ -21,7 +21,7 @@ const postGoal = async (e) =>{
         name,
         age,
        description,
-        date:new Date(),
+        date:new Date().toString(),
        
 
 }
