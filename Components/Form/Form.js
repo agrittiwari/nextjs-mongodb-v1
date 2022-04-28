@@ -1,4 +1,4 @@
-import { useState } from "react"
+import React, { useEffect,useState } from 'react'
 import { SuccessAlert, ErrorAlert} from "../Alert";
 
  export const GoalForm = () =>
@@ -9,10 +9,10 @@ const [name, setName] = useState('');
 const [age, setAge] = useState('')
 const [description, setDescription] = useState('')
 
-const postGoal = async (e) =>
-{
-    e.preventDefault()
 
+
+const postGoal = async (e) =>{
+    e.preventDefault()
     setError('')
     setMessage('')
 

@@ -18,10 +18,9 @@ async function getGoals(req, res){
         //connect to database
  const client = await clientPromise;
  const db = client.db()
- const response= await db.collection('goals').find()
-const responseData = await response.next()
- console.log(responseData)
-        return res.json({responseData})
+ const response= await db.collection('goals').findOne()
+ console.log( response)
+        return res.json({response})
     } catch (error) {
          // return an error
          return res.json({
@@ -33,14 +32,14 @@ const responseData = await response.next()
 
 
 async function addGoal (req, res){
-   
+
 
     try {
         let goal = JSON.parse(req.body);
-        //console.log(goal)
-    
+       // console.log(goal)
+
         let{ name, age, description} =goal
-    
+
         if(!name || !age || !description){
             throw new Error("Invalid Request");
         }
@@ -48,16 +47,15 @@ async function addGoal (req, res){
  const client = await clientPromise;
  const db = client.db()
 
-
-
-//PUT request
-const response = await db.collection('goals').updateOne({"_id":"101"},{$push:{goalsArray:req.body}},{$upsert:true})
+  
+//POST request
+const response = await db.collection('goals').updateOne({}, { $push: { "goalsArray": goal } })
  console.log(response)
 
 //return a message
 return res.json({
     message: 'Details updated successfully',
-    success: true
+    success: response
 })
     } catch (error) {
         // return an error
@@ -66,7 +64,4 @@ return res.json({
             success: false,
         })
     }
- 
-
-
 }
