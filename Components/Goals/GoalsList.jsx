@@ -1,9 +1,9 @@
 import React, { useEffect,useState } from 'react'
 import GoalCard from './GoalCard'
-
+import styles from './Goals.module.css'
 
 const GoalsList = () => {
-    const [data, setData] = useState(null)
+    const [data, setData] = useState([])
     const [isLoading, setLoading] = useState(false)
   
 useEffect(()=>{
@@ -11,20 +11,17 @@ useEffect(()=>{
     fetch('api/goals')
       .then((res) => res.json())
       .then((data) => {
-        setData(data.response.goalsArray)
+        setData(data.goalsArray)
         setLoading(false)
       })
 },[])
 
 if (isLoading) return <p>Loading...</p>
   if (!data) return <p>No profile data</p>
-
+//console.log(data)
     return (
-    <div><h1>GoalsList</h1>
-{console.log(typeof(data))}
-{data.map((index, goal)=>(<GoalCard key={index} props={goal}/>))}
-
-        
+    <div className={` ${styles.list}`}>
+{data.map(( goal,index)=>(<GoalCard key={index} goal={goal}/>))}    
     </div>
   )
 }

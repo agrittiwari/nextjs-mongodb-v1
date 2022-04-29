@@ -1,16 +1,16 @@
 import React from 'react'
-
+import styles from './Goals.module.css'
 const GoalCard = ({goal}) => {
   return (
-    <div>GoalCard
-      <div>
+    <div className={` ${styles.card}`}>
+      <div className={`${styles.cardDiv1}`}>
         {console.log(goal)}
-        {/* <h2>{goal.description}</h2> */}
-        {/* <p>{goal.date}</p> */}
+        <p>👉 {goal.description}</p>
+        <span>{goal.date.slice(4, 15)}</span>, <span>{goal.date.slice(16, 21)} IST</span>
       </div>
-      <div>
-        {/* <strong>{goal.name}</strong> */}
-        {/* <p>{goal.age} years old</p> */}
+      <div className={`${styles.cardDiv2}`}>
+        <strong>🗣️{goal.name}</strong>
+        <p>{goal.age} years old</p>
       </div>
     </div>
   )

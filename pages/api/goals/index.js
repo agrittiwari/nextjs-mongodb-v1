@@ -16,11 +16,15 @@ export default async function handler(req, res){
 async function getGoals(req, res){
     try {
         //connect to database
+        //console.log('hitting api')
  const client = await clientPromise;
  const db = client.db()
- const response= await db.collection('goals').findOne()
- console.log( response)
-        return res.json({response})
+ const goal= await db.collection('goals').find()
+ const response =await goal.next()
+ const goalsArray = response.goalsArray
+ //console.log(`this is ${response}`)
+//console.log(response.goalsArray)
+        return res.json({goalsArray})
     } catch (error) {
          // return an error
          return res.json({

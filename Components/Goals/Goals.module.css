@@ -1,3 +1,63 @@
 .list{
-    grid-template-columns: repeat(1fr, 1fr);
+    
+    width:600px;
+    list-style-type: none;
+    display: flex; 
+    flex-direction: column-reverse; 
+    vertical-align: top;
+    padding: 50px;
+background-color: rgb(221, 148, 70);
+
+
 }
+
+.card{
+    width: 98%;
+background-color: rgb(172, 175, 177);
+border-radius:20px;
+padding:10px 4px 8px 4px;
+
+margin: 4px;
+}
+
+.cardDiv1{
+    margin:5px;;
+    width: 98%;
+    background-color: rgb(209, 206, 208);
+    border-radius: 20px;
+    padding: 6px;
+
+}
+.cardDiv1 > p{
+    font-size: 20px;
+   padding-bottom: 0%;
+    border-radius: 10%;
+    /* border: 1px solid rgb(46, 46, 46);  */
+    text-decoration-color: rgba(0, 0, 0, 0.603);
+    text-decoration: solid;
+    text-shadow: darkblue;
+    text-align: center;
+
+}
+.cardDiv1 > span{
+    text-align: right;
+}
+
+.cardDiv2{
+   margin: 7px;
+   width: 98%;
+    background-color: rgb(209, 206, 208);
+    border-radius: 20px;
+    padding: 2px;
+    display: flex;
+    padding: 6px;
+}
+
+.cardDiv2 > p{
+
+    font-size: 14px;
+    flex: 1;
+    text-align: end;
+    margin-right:2px ;
+}
+

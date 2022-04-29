@@ -12,10 +12,10 @@ const Goals=()=>{
 
       </Head>
 
-      <main className='box-content  items-center px-12'>
-        <h1 className="title box-content pt-4 ">Goals of our Generation</h1>
-        <GoalsList/>
+      <main className=' box-content  items-center px-10'>
+        <h1 className="title box-content pt-4 ">Goals of our Generation 👀👀</h1>
         </main>
+         <GoalsList/>
     </div>)
 }
 
