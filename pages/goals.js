@@ -17,7 +17,7 @@ const Goals=()=>{
         <h1 className="title box-content pt-4 ">Goals of our Generation 👀👀</h1>
         <strong >
             <img src="/pointer.png" alt="pointer icon" className="icon float-right" />
-            <Link href='/goals' className="subtitle pt-2 float-right">
+            <Link href='/' className="subtitle pt-2 float-right">
             You can add your goal to this list, here</Link>
             </strong>
         </main>
