@@ -21,8 +21,14 @@ export default function Home({ isConnected }) {
           Write about your life Goal 🥇💭
         </h1>
 
-        {isConnected ? (
-          <h2 className="subtitle pt-2 "><Link href='/goals'>See the List of all wonderful Goals people are working on _-_-_-_</Link></h2>
+        {isConnected ? (<div className="flow-root">
+          <strong >
+            <img src="/pointer.png" alt="pointer icon" className="icon float-right" />
+            <Link href='/goals' className="subtitle pt-2 float-right">
+            See the List of all wonderful Goals people are working on </Link>
+            </strong>
+        </div>
+          
         ) : (
           <h2 className="subtitle box-content  ">
           There is no access to Dreamland
@@ -32,6 +38,17 @@ export default function Home({ isConnected }) {
       <div>
         <GoalForm/>
       </div>
+      <footer > 
+        <a
+          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Powered by Vercel 
+        </a>
+<strong> Made with ❣️</strong>
+        <a href="https://www.twitter.com/agrit_tiwari"> @agrit_tiwari </a>
+      </footer>
     </div>
   )
 }
