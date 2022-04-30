@@ -3,7 +3,7 @@ import { SuccessAlert, ErrorAlert} from "../Alert";
 
 
  export const GoalForm = () =>{
-    const router = useRouter()   
+      
     
 const [error, setError] = useState('');
 const [message, setMessage] = useState('');
