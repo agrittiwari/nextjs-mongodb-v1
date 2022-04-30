@@ -1,18 +1,17 @@
 .list{
     
-    width:600px;
+    width:550px;
     list-style-type: none;
     display: flex; 
     flex-direction: column-reverse; 
     vertical-align: top;
-    padding: 50px;
+    padding: 20px;
 background-color: rgb(221, 148, 70);
 
 
 }
 
 .card{
-    width: 98%;
 background-color: rgb(172, 175, 177);
 border-radius:20px;
 padding:10px 4px 8px 4px;
@@ -42,7 +41,9 @@ margin: 4px;
 .cardDiv1 > span{
     text-align: right;
 }
-
+.timezone{
+    font-size: smaller;
+}
 .cardDiv2{
    margin: 7px;
    width: 98%;

@@ -6,7 +6,8 @@ const GoalCard = ({goal}) => {
       <div className={`${styles.cardDiv1}`}>
         {console.log(goal)}
         <p>👉 {goal.description}</p>
-        <span>{goal.date.slice(4, 15)}</span>, <span>{goal.date.slice(16, 21)} IST</span>
+        <span>{goal.date.slice(4, 15)}</span>, <span>{goal.date.slice(16, 21)}</span>
+        <div className={`${styles.timezone}`} >{goal.date.slice(34)}</div>
       </div>
       <div className={`${styles.cardDiv2}`}>
         <strong>🗣️{goal.name}</strong>
