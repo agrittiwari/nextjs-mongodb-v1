@@ -1,6 +1,6 @@
 import React, { useEffect,useState } from 'react'
 import { SuccessAlert, ErrorAlert} from "../Alert";
-import { useRouter } from 'next/router'
+
 
  export const GoalForm = () =>{
     const router = useRouter()   
@@ -48,6 +48,8 @@ const postGoal = async (e) =>{
                 setDescription('')
                  // set the message
                 return setMessage(data.message)
+
+                 
             } else {
                 return setError(data.message)
             }
@@ -57,8 +59,7 @@ const postGoal = async (e) =>{
         console.error('error happened here', err)
     }
    
-    //move to page /goals
-    router.push('/goals')
+  
 
 }
     return (
